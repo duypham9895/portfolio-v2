@@ -16,7 +16,7 @@ const avatarLoader = ({ src }: { src: string }) => {
 const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, The name's Duy Pham",
+      "Hi, my name is Duy Pham",
       "guy_who_loves_cold_brew.tsx",
       "<butLovesToCodeMore />",
     ],
