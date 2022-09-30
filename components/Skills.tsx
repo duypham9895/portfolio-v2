@@ -10,7 +10,7 @@ const Skills = (props: Props) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
       className="flex flex-col relative text-center md:text-left xl:flex-row xl:space-y-0 max-w-[2000px] px-10 min-h-screen justify-center mx-auto items-center"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
