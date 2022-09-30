@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
+import { ChevronDoubleUpIcon } from "@heroicons/react/24/solid";
 
 import About from "../components/About";
 import Contact from "../components/Contact";
@@ -41,6 +43,14 @@ const Home: NextPage = () => {
       <section id="contact" className="snap-start">
         <Contact />
       </section>
+
+      <Link href="#hero">
+        <footer className="sticky bottom-5 w-full cursor-pointer">
+          <div className="flex items-center justify-center">
+            <ChevronDoubleUpIcon className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer" />
+          </div>
+        </footer>
+      </Link>
     </div>
   );
 };
