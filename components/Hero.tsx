@@ -1,11 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import BackgroundCircles from "./UI/BackgroundCircles";
-import Link from "next/link";
-
-// https://i.ibb.co/SN5wm1D/avatar.jpg
 
 type Props = {};
 
@@ -47,7 +45,7 @@ const Hero = (props: Props) => {
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
-          <Link href="experience">
+          <Link href="#experience">
             <button className="heroButton">Experience</button>
           </Link>
           <Link href="#skills">
