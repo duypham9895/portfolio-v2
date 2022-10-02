@@ -53,6 +53,11 @@ const Hero = ({ pageInfo: { heroImage, name, role } }: Props) => {
           <Link href="#projects">
             <button className="heroButton">Projects</button>
           </Link>
+          <Link href="https://resume.io/r/SiSFpZRMv" passHref>
+            <a target="_blank" rel="noopener noreferrer" className="heroButton">
+              Resume
+            </a>
+          </Link>
         </div>
       </div>
     </div>
