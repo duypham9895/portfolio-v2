@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
+import { PageInfo } from "../types/generated";
+import { urlFor } from "../lib/sanity";
 
-const About = (props: Props) => {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+const About = ({ pageInfo: { profilePic, backgroundInformation } }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -24,9 +29,9 @@ const About = (props: Props) => {
         }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
+        src={urlFor(profilePic).url()}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[550px]"
-        src="https://res.cloudinary.com/duypham9895/image/upload/v1664507337/personal/vqwuoxmumhjaractf6ru.jpg"
-        alt="setup-desk"
+        alt="profile"
       />
 
       <div className="space-y-10 px-0 md:px-10">
@@ -35,12 +40,7 @@ const About = (props: Props) => {
           <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           background{" "}
         </h4>
-        <p className="text-base">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-          vel. Quaerat ducimus sint, similique optio expedita sed maxime atque
-          rem aliquam mollitia debitis sit nihil amet praesentium modi?
-          Temporibus, reiciendis.
-        </p>
+        <p className="text-base">{backgroundInformation}</p>
       </div>
     </motion.div>
   );
