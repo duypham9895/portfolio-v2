@@ -4,17 +4,17 @@ import Link from "next/link";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import BackgroundCircles from "./UI/BackgroundCircles";
+import { PageInfo } from "../types/generated";
+import SanityImageLoader from "./UI/SanityImageLoader";
 
-type Props = {};
-
-const avatarLoader = ({ src }: { src: string }) => {
-  return `https://res.cloudinary.com/duypham9895/image/upload/v1664464589/personal/${src}`;
+type Props = {
+  pageInfo: PageInfo;
 };
 
-const Hero = (props: Props) => {
-  const [text, count] = useTypewriter({
+const Hero = ({ pageInfo: { heroImage, name, role } }: Props) => {
+  const [text] = useTypewriter({
     words: [
-      "Hi, my name is Edward Pham",
+      `Hi, my name is ${name}`,
       "guy_who_loves_cold_brew.tsx",
       "<butLovesToCodeMore />",
     ],
@@ -24,17 +24,16 @@ const Hero = (props: Props) => {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      <Image
+      <SanityImageLoader
+        src={heroImage}
         className="relative rounded-full mx-auto object-cover"
-        loader={avatarLoader}
-        src="rcrfw0avep18b2ppuon9.jpg"
         alt="me"
         width="128"
         height="128"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Software Engineer
+          {role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
