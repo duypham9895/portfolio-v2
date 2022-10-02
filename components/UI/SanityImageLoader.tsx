@@ -22,8 +22,8 @@ export default function SanityImageLoader({
     const url =
       imageBuilder
         .image(src)
-        .width(width)
-        .height(Number(props.height) || 256)
+        // .width(width)
+        // .height(Number(props.height) || 256)
         .auto("format")
         .quality(quality)
         .fit("clip")
