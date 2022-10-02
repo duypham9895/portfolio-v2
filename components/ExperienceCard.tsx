@@ -40,7 +40,7 @@ const ExperienceCard = ({
   const workDuration = `${startWorkingDate} - ${endWorkingDate}`;
 
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-5 flex-shrink-0 w-[350px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-15 flex-shrink-0 w-[350px] md:w-[500px] xl:w-[700px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 transition-opacity duration-200 overflow-hidden">
       <motion.img
         initial={{ y: -100, opacity: 0 }}
         transition={{ duration: 1.5 }}
