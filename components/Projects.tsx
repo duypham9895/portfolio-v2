@@ -27,7 +27,7 @@ const Projects = ({ projects }: Props) => {
           return (
             <motion.div
               key={_id}
-              className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44"
+              className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-15 items-center justify-center p-20 md:p-40"
             >
               <motion.img
                 initial={{ y: -300, opacity: 0 }}
@@ -36,11 +36,12 @@ const Projects = ({ projects }: Props) => {
                 viewport={{ once: true }}
                 src={urlFor(image).url()}
                 alt={snakeCase(title)}
-                width="499"
-                height="274"
+                className="mt-10"
+                width="450"
+                height="250"
               />
 
-              <div className="space-y-5 px-0 md:px-10 max-w-6xl">
+              <div className="space-y-5 py-5 px-0 md:px-10 max-w-6xl">
                 <h4 className="text-4xl font-semibold text-center">
                   <span className="underline decoration-[#F7AB0A]/50">
                     Case Study {index + 1}/{projects.length}:
