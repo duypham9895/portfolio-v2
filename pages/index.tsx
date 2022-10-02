@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { ChevronDoubleUpIcon } from "@heroicons/react/24/solid";
@@ -23,19 +23,17 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocials } from "../utils/fetchSocials";
 
-type Props = {
-  pageInfo: PageInfo;
-  experiences: Experience[];
-  skills: Skill[];
-  projects: Project[];
-  socials: Social[];
-};
-
-const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
+const Home = ({
+  pageInfo,
+  experiences,
+  skills,
+  projects,
+  socials,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
-        <title>{pageInfo.name} - Portfolio</title>
+        <title>Edward&lsquo;s Portfolio</title>
       </Head>
 
       <Header socials={socials} />
@@ -77,6 +75,13 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 
 export default Home;
 
+type Props = {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+};
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo = await fetchPageInfo();
   const experiences = await fetchExperiences();
